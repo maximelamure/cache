@@ -18,9 +18,9 @@ Then, this package
 - `go get github.com/maximelamure/cache`
 
 
-## Example
+## Examples
 
-You can find an example in the `example` package
+See `cache_test.go`
 
 
 ## Documentation

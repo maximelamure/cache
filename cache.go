@@ -16,11 +16,16 @@ var (
 	c *client
 )
 
+// Init initiates a memcache client using the provided server(s)
+// with equal weight. If a server is listed multiple times,
+// it gets a proportional amount of weight.
 func Init(servers ...string) {
 	mc := memcache.New(servers...)
 	c = &client{mc: mc}
 }
 
+// Get gets the item for the given key. The key must be
+// at most 250 bytes in length.
 func Get(key string, obj interface{}) bool {
 	if len(key) > 0 && c != nil {
 		item, err := c.mc.Get(key)

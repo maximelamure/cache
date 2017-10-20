@@ -1,5 +1,3 @@
-# work in progress ...
-
 # cache
 A simple wrapper around memcached in Go
 

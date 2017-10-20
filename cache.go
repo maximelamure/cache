@@ -2,7 +2,6 @@ package cache
 
 import (
 	"bytes"
-	"context"
 	"encoding/gob"
 
 	"github.com/bradfitz/gomemcache/memcache"
@@ -77,6 +76,7 @@ func Set(key string, object interface{}, expiration int32) error {
 	return nil
 }
 
-func Delete(ctx context.Context, key string) error {
+// Delete deletes the item
+func Delete(key string) error {
 	return c.mc.Delete(key)
 }
